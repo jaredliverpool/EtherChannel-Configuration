@@ -11,3 +11,11 @@ In this project, I will configure the Layer 2 EtherChannel between the Access La
 - I began by combining interfaces g0/1 and g0/2 in golbal config mode using the interface range command. I created an EtherChannel on the interface range by the "channel-protocol" command using the lacp protocol. I made it visible to the network using the channel-group" command and making the mode "active." I added the same comfigurations in g1/0/3 and g1/0/4 in the DWS1 switch. I also created the channel-group mode in the DSW1 switch to be "active" as well, solidifying the EtherChannel connection between ASW1 and DSW1.
 
 - <img width="1103" height="336" alt="Screenshot 2026-05-09 at 9 39 25 PM" src="https://github.com/user-attachments/assets/eafa4e97-bc7e-4a17-be55-0ecccc0d0ff6" />
+
+- I also configured trunks on the interfaces connecting ASW1 and DSW1 to allow multiple VLANs to travel through the devices.
+
+- <img width="1582" height="467" alt="Screenshot 2026-05-09 at 9 39 29 PM" src="https://github.com/user-attachments/assets/5675b62e-885c-4e7a-a60f-2062945b6f81" />
+
+- I verified the EtherChannel connection between the two switches using the "show etherchannel summary" command. I see an EtherChannel has been created called Po1. We see it's a Layer 2 protocol and it is active/in use through the SU flags. We see that the protocol is LACP as we configured. And I see the ports I configured in the port-channel by the flag indicator as well.
+
+<img width="1920" height="1080" alt="Screenshot 2026-05-10 at 10 49 18 PM (2)" src="https://github.com/user-attachments/assets/0660c500-f4cc-4034-be45-cb7c9777d2ee" />
